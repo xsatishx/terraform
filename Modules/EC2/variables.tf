@@ -1,4 +1,4 @@
-variable "count" {
+variable "instance_count" {
   default     = 3
   description = "Number of ec2 instance(s) to be provisioned"
 }
