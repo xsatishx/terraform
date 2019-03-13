@@ -12,7 +12,8 @@ variable "instance_id" {
 }
 
 variable "ebs_tag_name" {
-  type = "list"
+  default     = "TestVol"
+  description = "Tag the name of the project"
 }
 
 variable "device_name" {
