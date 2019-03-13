@@ -15,7 +15,7 @@ module "EC2" {
 }
 
 module "EBS" {
-  source       = "git::ssh://git@192.168.1.158/scb-templates/modules.git//Compute/EBS"
+  source       = "git::https://github.com/xsatishx/terraform.git//Modules/EBS"
   instance_az  = ["${module.EC2.instance_az}"]
   ebs_size     = "${var.ebs_size}"
   ebs_type     = "${var.ebs_type}"
