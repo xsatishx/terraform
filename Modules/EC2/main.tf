@@ -9,7 +9,7 @@ resource "aws_instance" "ec2" {
 
   ## Insert EC2 ec2_tags
   tags {
-    Name      = "${var.tag_name, count.index +1}"
+    Name      = "${var.tag_name}-${count.index + 1}"
     Company   = "${var.tag_company}"
     AppLevel  = "${var.tag_applevel}"
     AppName   = "${var.tag_appname}"
