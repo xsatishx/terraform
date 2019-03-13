@@ -17,9 +17,10 @@ module "EC2" {
 module "EBS" {
   source       = "git::https://github.com/xsatishx/terraform.git//Modules/EBS"
   instance_az  = ["${module.EC2.instance_az}"]
-  ebs_size     = "${var.ebs_size}"
-  ebs_type     = "${var.ebs_type}"
+  ebs_size     = ["${module.EBS.ebs_size}"]
+  ebs_type     = ["${module.EBS.ebs_type}"]
   instance_ids = ["${module.EC2.instance_ids}"]
-  count        = "${var.count}"
-  device_name  = "${var.device_name_1}"
+  count        = ["${module.EBS.ebs_count}"]
+
+  //device_name  = "${module.EBS.device_name_1}"
 }

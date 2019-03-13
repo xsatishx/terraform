@@ -19,7 +19,7 @@ variable "device_name" {
   type = "list"
 }
 
-variable "count" {
+variable "ebs_count" {
   default     = 2
   description = "Number of drives"
 }
