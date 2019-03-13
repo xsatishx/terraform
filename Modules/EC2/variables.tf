@@ -14,80 +14,78 @@ variable "instance_type" {
 }
 
 variable "associate_public_ip_address" {
-  default     = ""
-  description = ""
+  default     = "true"
+  description = " Associate a public ip address with the instance. The value is Boolean "
 }
 
 variable "key_name" {
-  default     = ""
-  description = ""
+  default     = "satish-scb"
+  description = "The key name that can be used to ssh into the instance"
 }
 
 variable "iam_role" {
-  default     = ""
-  description = ""
+  default     = "Full_S3_access_from_EC2"
+  description = "iam role to enable ec2 to access s3"
 }
 
 variable "tag_name" {
-  default     = ""
-  description = ""
+  default     = "TestProject"
+  description = "Tag the name of the project"
 }
 
 variable "tag_company" {
-  default     = ""
-  description = ""
+  default     = "SCB"
+  description = "Tag the instance with the name of the company"
 }
 
 variable "tag_applevel" {
-  default     = ""
-  description = ""
+  default     = "2"
+  description = "Tag the instance with the app level"
 }
 
 variable "tag_apptype" {
-  default     = ""
-  description = ""
+  default     = "webapp"
+  description = "Tag the instance with the app type"
 }
 
 variable "tag_appname" {
-  default     = ""
-  description = ""
+  default     = "testapp"
+  description = "Tag the instance with the name of the app"
 }
 
 variable "tag_function" {
-  default     = ""
-  description = ""
+  default     = "developer"
+  description = "Insert the function of the tag"
 }
 
 variable "tag_adminname" {
-  default     = ""
-  description = ""
+  default     = "Satish"
+  description = "Placeholder to identify the admin"
 }
 
 variable "ec2_sg" {
   type = "list"
 
   default = [
-    "something",
-    "something else",
-    "something yet else",
+    "sg-058aa84cc8c2c2f6f",
+    "sg-f52ab79f",
   ]
 
-  description = ""
+  description = "List of security groups to be associated with the instance"
 }
 
 variable "subnet_id" {
   type = "list"
 
   default = [
-    "something",
-    "something else",
-    "something yet else",
+    "subnet-64d2ec0c",
+    "subnet-f0325fbc",
   ]
 
-  description = ""
+  description = "List of subnets to be associated with the instance"
 }
 
 variable "vpc_id" {
-  default     = ""
-  description = ""
+  default     = "vpc-21232449"
+  description = "The VPC ID in which the instance will be provisioned"
 }
