@@ -15,12 +15,10 @@ module "EC2" {
 }
 
 module "EBS" {
-  source       = "git::https://github.com/xsatishx/terraform.git//Modules/EBS"
-  instance_az  = ["${module.EC2.instance_az}"]
-  ebs_size     = ["${module.EBS.ebs_size}"]
-  ebs_type     = ["${module.EBS.ebs_type}"]
-  instance_ids = ["${module.EC2.instance_ids}"]
-  count        = ["${module.EBS.ebs_count}"]
-
-  //device_name  = "${module.EBS.device_name_1}"
+  source      = "git::https://github.com/xsatishx/terraform.git//Modules/EBS"
+  instance_az = ["${module.EC2.instance_az}"]
+  ebs_size    = ["${module.EBS.ebs_size}"]
+  ebs_type    = ["${module.EBS.ebs_type}"]
+  instance_id = ["${module.EC2.instance_ids}"]
+  device_name = ["${module.EC2.tag_name}"]
 }
