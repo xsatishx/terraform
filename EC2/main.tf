@@ -27,8 +27,8 @@ module "ec2-instance" {
 
   root_block_device = [
     {
-      volume_size = "20"
-      volume_type = "gp2"
+      volume_size = "${var.root_volume_size}"
+      volume_type = "${var.root_volume_type}"
     },
   ]
 }

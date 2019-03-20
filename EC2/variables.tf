@@ -17,6 +17,7 @@ variable "name" {
 
 variable "vpc_security_group_ids" {
   description = "Subnet ID where the isntance has to be created"
+  type        = "list"
 
   default = [
     "sg-058aa84cc8c2c2f6f",
@@ -104,4 +105,14 @@ variable "tag_function" {
 variable "tag_adminname" {
   description = "Tag the instance with the admins name"
   default     = "admin"
+}
+
+variable "root_volume_size" {
+  description = "Size of the Root volume"
+  default     = 20
+}
+
+variable "root_volume_type" {
+  description = "Type of the root volume"
+  default     = "gp2"
 }
