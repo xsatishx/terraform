@@ -34,10 +34,11 @@ module "ec2-instance" {
 }
 
 resource "aws_ebs_volume" "volumes" {
-  count             = "${var.ebs_count}"
+  count             = "${var.ebs_count * var.instance_count}"
   availability_zone = "${element(module.ec2-instance.availability_zone, count.index)}"
   type              = "${var.ebs_type}"
   size              = "${var.ebs_size}"
+  encrypted         = true
 }
 
 resource "aws_volume_attachment" "volumes-attachment" {
