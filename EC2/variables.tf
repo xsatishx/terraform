@@ -27,6 +27,11 @@ variable "vpc_security_group_ids" {
 
 // EC2 optional variables
 
+variable "user_data" {
+  default     = ""
+  description = "Enter any user data here"
+}
+
 variable "iam_instance_profile" {
   default     = "Full_S3_access_from_EC2"
   description = "iam role to enable ec2 to access s3"
@@ -53,7 +58,7 @@ variable "subnet_ids" {
 }
 
 variable "ebs_count" {
-  default     = 2
+  default     = 1
   description = "Enter the number EBS volumes to attach to the instance"
 }
 

@@ -14,6 +14,7 @@ module "ec2-instance" {
   iam_instance_profile   = "${var.iam_instance_profile}"
   key_name               = "${var.key_name}"
   subnet_ids             = "${var.subnet_ids}"
+  user_data              = "{$var.user_data}"
 
   tags = {
     "tag_name"      = "${var.tag_name}"
