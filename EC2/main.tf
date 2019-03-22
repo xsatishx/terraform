@@ -42,7 +42,7 @@ resource "aws_ebs_volume" "volumes" {
 }
 
 resource "aws_volume_attachment" "volumes-attachment" {
-  count       = "${var.ebs_count}"
+  count       = "${var.ebs_count * var.instance_count}"
   device_name = "${var.block_device_names}"
   volume_id   = "${element(aws_ebs_volume.volumes.*.id, count.index)}"
   instance_id = "${element(module.ec2-instance.id, count.index)}"
