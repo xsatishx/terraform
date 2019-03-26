@@ -29,6 +29,16 @@ module "elb_http" {
     },
   ]
 
+  tags = {
+    "tag_name"      = "${var.tag_name}"
+    "tag_company"   = "${var.tag_company}"
+    "tag_applevel"  = "${var.tag_applevel}"
+    "tag_apptype"   = "${var.tag_apptype}"
+    "tag_appname"   = "${var.tag_apptype}"
+    "tag_function"  = "${var.tag_function}"
+    "tag_adminname" = "${var.tag_adminname}"
+  }
+
   // These 2 values come from ec2 instances module or have to enter via command line args
   number_of_instances = "${var.number_of_instances}"
   instances           = "${var.instances}"
