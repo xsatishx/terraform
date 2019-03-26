@@ -19,3 +19,8 @@ output "intra_subnets" {
   description = "List of IDs of intra subnets"
   value       = ["${module.vpc.intra_subnets}"]
 }
+
+output "vpc_security_group_ids" {
+  description = "vpc security group ids"
+  value       = ["${module.vpc.default_security_group_id}"]
+}
