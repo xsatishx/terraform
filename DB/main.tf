@@ -4,19 +4,20 @@ provider "aws" {
 
 module "db" {
   //https://registry.terraform.io/modules/terraform-aws-modules/rds/aws/1.26.0
-  source             = "terraform-aws-modules/rds/aws"
-  version            = "1.26.0"
-  identifier         = "${var.identifier}"
-  engine             = "${var.engine}"
-  engine_version     = "${var.engine_version}"
-  instance_class     = "${var.instance_class}"
-  allocated_storage  = "${var.allocated_storage}"
-  name               = "${var.identifier}"
-  username           = "${var.username}"
-  password           = "${var.password}"
-  port               = "${var.port}"
-  maintenance_window = "${var.maintenance_window}"
-  backup_window      = "${var.backup_window}"
+  source                 = "terraform-aws-modules/rds/aws"
+  version                = "1.26.0"
+  identifier             = "${var.identifier}"
+  engine                 = "${var.engine}"
+  engine_version         = "${var.engine_version}"
+  instance_class         = "${var.instance_class}"
+  allocated_storage      = "${var.allocated_storage}"
+  name                   = "${var.identifier}"
+  username               = "${var.username}"
+  password               = "${var.password}"
+  port                   = "${var.port}"
+  maintenance_window     = "${var.maintenance_window}"
+  backup_window          = "${var.backup_window}"
+  vpc_security_group_ids = "${var.vpc_security_group_ids}"
 
   # DB parameter group
   family = "${var.family}"
@@ -28,6 +29,16 @@ module "db" {
   final_snapshot_identifier = "${var.final_snapshot_identifier}"
   deletion_protection       = "${var.deletion_protection}"
   subnet_ids                = "${var.subnet_ids}"
+
+  tags = {
+    "tag_name"      = "${var.tag_name}"
+    "tag_company"   = "${var.tag_company}"
+    "tag_applevel"  = "${var.tag_applevel}"
+    "tag_apptype"   = "${var.tag_apptype}"
+    "tag_appname"   = "${var.tag_apptype}"
+    "tag_function"  = "${var.tag_function}"
+    "tag_adminname" = "${var.tag_adminname}"
+  }
 
   options = [
     {
@@ -89,3 +100,6 @@ module "db" {
     },
   ]
 }
+
+// https://github.com/terraform-providers/terraform-provider-aws/issues/4597    Option group does not get deleted
+
