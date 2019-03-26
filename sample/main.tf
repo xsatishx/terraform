@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "vpc" {
-  source        = "./../vpc"
+  source        = "github.com/xsatishx/terraform/vpc"
   tag_name      = "${var.tag_name}"
   tag_company   = "${var.tag_company}"
   tag_applevel  = "${var.tag_applevel}"
@@ -14,7 +14,7 @@ module "vpc" {
 }
 
 module "db" {
-  source                 = "./../DB"
+  source                 = "github.com/xsatishx/terraform/DB"
   identifier             = "testprojectdb"
   vpc_security_group_ids = ["${module.vpc.vpc_security_group_ids}"]
   subnet_ids             = ["${module.vpc.intra_subnets}"]
@@ -28,7 +28,7 @@ module "db" {
 }
 
 module "ec2_instance" {
-  source                 = "./../EC2"
+  source                 = "github.com/xsatishx/terraform/EC2"
   vpc_security_group_ids = ["${module.vpc.vpc_security_group_ids}"]
   subnet_ids             = ["${module.vpc.intra_subnets}"]
   tag_name               = "TestProject-intance"
@@ -43,7 +43,7 @@ module "ec2_instance" {
 }
 
 module "elb_http" {
-  source              = "./../ELB"
+  source              = "github.com/xsatishx/terraform/ELB"
   name                = "testprojectelb"
   subnets             = ["${module.vpc.intra_subnets}"]
   security_groups     = ["${module.vpc.vpc_security_group_ids}"]
