@@ -1,7 +1,6 @@
 // EC2 mandatory variables
-
 variable "ami" {
-  default     = "ami-06e7b9c5e0c4dd014"
+  default     = "ami-04b9e92b5572fa0d1"
   description = "Amazon Machine ID used for provisioning the instance"
 }
 
@@ -20,8 +19,8 @@ variable "vpc_security_group_ids" {
   type        = "list"
 
   default = [
-    "sg-0f02020b4734ff969",
-    "sg-f52ab79f",
+    "sg-0baeef25200705760",
+    "sg-2ea0757c",
   ]
 }
 
@@ -43,7 +42,7 @@ variable "instance_count" {
 }
 
 variable "key_name" {
-  default     = "satish-"
+  default     = "satish-aws-hpe"
   description = "Type key to be used for ssh"
 }
 
@@ -52,8 +51,7 @@ variable "subnet_ids" {
   description = "List of subnets to be associated with the instance"
 
   default = [
-    "subnet-64d2ec0c",
-    "subnet-f0325fbc",
+    "subnet-54c31619"
   ]
 }
 

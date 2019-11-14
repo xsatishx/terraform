@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "ap-northeast-2"
+  region = "us-east-1"
 }
 
 module "ec2-instance" {
@@ -11,7 +11,6 @@ module "ec2-instance" {
   instance_type          = "${var.instance_type}"
   name                   = "${var.name}"
   vpc_security_group_ids = "${var.vpc_security_group_ids}"
-  iam_instance_profile   = "${var.iam_instance_profile}"
   key_name               = "${var.key_name}"
   subnet_ids             = "${var.subnet_ids}"
   user_data              = "{$var.user_data}"
