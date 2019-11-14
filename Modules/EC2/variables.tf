@@ -38,7 +38,7 @@ variable "iam_instance_profile" {
 }
 
 variable "instance_count" {
-  default     = 2
+  default     = 1
   description = "Number of amazon instance to be provisioned"
 }
 
@@ -58,7 +58,7 @@ variable "subnet_ids" {
 }
 
 variable "ebs_count" {
-  default     = 1
+  default     = 0
   description = "Enter the number EBS volumes to attach to the instance"
 }
 
@@ -82,25 +82,6 @@ variable "tag_name" {
   default     = "app"
 }
 
-variable "tag_company" {
-  description = "Company name to be tagged to the instance"
-  default     = ""
-}
-
-variable "tag_applevel" {
-  description = "Tag the instance with the app level"
-  default     = "4"
-}
-
-variable "tag_apptype" {
-  description = "Tag the instance with the app type"
-  default     = "webapp"
-}
-
-variable "tag_appname" {
-  description = "Tag the instance with the app name"
-  default     = "RPS"
-}
 
 variable "tag_function" {
   description = "Tag the instance with the app function"
@@ -121,7 +102,7 @@ variable "root_volume_type" {
   description = "Type of the root volume"
   default     = "gp2"
 }
-
+/*
 variable "ebs_device_name" {
   type = "map"
 
@@ -130,3 +111,4 @@ variable "ebs_device_name" {
     i1 = "xvdi"
   }
 }
+*/

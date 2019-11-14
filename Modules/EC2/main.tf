@@ -18,10 +18,6 @@ module "ec2-instance" {
 
   tags = {
     "tag_name"      = "${var.tag_name}"
-    "tag_company"   = "${var.tag_company}"
-    "tag_applevel"  = "${var.tag_applevel}"
-    "tag_apptype"   = "${var.tag_apptype}"
-    "tag_appname"   = "${var.tag_apptype}"
     "tag_function"  = "${var.tag_function}"
     "tag_adminname" = "${var.tag_adminname}"
   }
