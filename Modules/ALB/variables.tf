@@ -36,17 +36,17 @@ variable "user_data" {
 }
 
 variable "lb_name" {
-  default = "scb-application-load-balancer"
+  default = "-application-load-balancer"
 }
 
 variable "lc_name" {
   type    = "string"
-  default = "scb-launch-configuration"
+  default = "-launch-configuration"
 }
 
 variable "autoscaling_group_name" {
   type    = "string"
-  default = "scb-autoscaling-instance"
+  default = "-autoscaling-instance"
 }
 
 variable "health_check_type" {
@@ -69,7 +69,7 @@ variable "tag_environment" {
 
 variable "tag_company" {
   description = "Company name to be tagged to the instance"
-  default     = "scb"
+  default     = ""
 }
 
 variable "tag_applevel" {

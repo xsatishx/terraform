@@ -50,7 +50,7 @@ variable "tag_environment" {
 
 variable "tag_company" {
   description = "Company name to be tagged to the instance"
-  default     = "scb"
+  default     = ""
 }
 
 

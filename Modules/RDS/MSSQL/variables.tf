@@ -143,7 +143,7 @@ variable "tag_environment" {
 
 variable "tag_company" {
   description       = "Company name to be tagged to the instance"
-  default           = "scb"
+  default           = ""
 }
 
 variable "tag_applevel" {
@@ -168,22 +168,22 @@ variable "tag_function" {
 
 variable "tag_adminname1" {
   description       = "Tag the instance with the admins name"
-  default           = "abc@scb.co.th"
+  default           = "abc@.co.th"
 }
 
 variable "tag_adminname2" {
   description       = "Tag the instance with the admins name"
-  default           = "xyz@scb.co.th"
+  default           = "xyz@.co.th"
 }
 
 variable "tag_dbadminname1" {
   description       = "Tag the instance with the db admin name"
-  default           = "abcd@scb.co.th"
+  default           = "abcd@.co.th"
 }
 
 variable "tag_dbadminname2" {
   description       = "Tag the instance with the db admin name"
-  default           = "xyzd@scb.co.th"
+  default           = "xyzd@.co.th"
 }
 
 variable "tag_createdby" {

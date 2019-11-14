@@ -103,7 +103,7 @@ Description:
  
 Type: `string`
  
-Default: `"scb-autoscaling-instance"`
+Default: `"-autoscaling-instance"`
  
 ### health\_check\_type
  
@@ -119,7 +119,7 @@ Description:
  
 Type: `string`
  
-Default: `"scb-launch-configuration"`
+Default: `"-launch-configuration"`
  
 ### load\_balancer\_name
  
@@ -127,7 +127,7 @@ Description:
  
 Type: `string`
  
-Default: `"scb-application-load-balancer"`
+Default: `"-application-load-balancer"`
  
 ### max\_size
  
@@ -183,7 +183,7 @@ Description: Company name to be tagged to the instance
  
 Type: `string`
  
-Default: `"scb"`
+Default: `""`
  
 ### tag\_createdby
  

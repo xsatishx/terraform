@@ -43,7 +43,7 @@ variable "instance_count" {
 }
 
 variable "key_name" {
-  default     = "satish-scb"
+  default     = "satish-"
   description = "Type key to be used for ssh"
 }
 
@@ -84,7 +84,7 @@ variable "tag_name" {
 
 variable "tag_company" {
   description = "Company name to be tagged to the instance"
-  default     = "SCB"
+  default     = ""
 }
 
 variable "tag_applevel" {

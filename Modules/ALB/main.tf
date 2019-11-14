@@ -7,12 +7,12 @@ module "ALB" {
   vpc_id                   = "${var.vpc_id}"
   http_tcp_listeners       = "${list(map("port", "80", "protocol", "HTTP"))}"
   http_tcp_listeners_count = "1"
-  target_groups            = "${list(map("name", "scb-my-targets", "backend_protocol", "HTTP", "backend_port", "80"))}"
+  target_groups            = "${list(map("name", "-my-targets", "backend_protocol", "HTTP", "backend_port", "80"))}"
   target_groups_count      = "1"
 
   logging_enabled = false
 
-  #log_bucket_name     = "cp-dev-scb-s3-bucket-test01"
+  #log_bucket_name     = "cp-dev--s3-bucket-test01"
   #log_location_prefix = "my-alb-logs"
 
   tags = {
@@ -34,7 +34,7 @@ module "asg" {
   source                       = "terraform-aws-modules/autoscaling/aws"
   version                      = "2.9.1"
   name                         = "${var.autoscaling_group_name}"
-  lc_name                      = "scb-my-lc"
+  lc_name                      = "-my-lc"
   image_id                     = "${var.ami}"
   instance_type                = "${var.instance_type}"
   key_name                     = "${var.key_name}"
@@ -42,7 +42,7 @@ module "asg" {
   associate_public_ip_address  = "${var.associate_public_ip_address}"
   recreate_asg_when_lc_changes = "${var.recreate_asg_when_lc_changes}"
   user_data                    = "${var.user_data}"
-  asg_name                     = "scb-my-asg"
+  asg_name                     = "-my-asg"
   vpc_zone_identifier          = "${var.subnets}"
   health_check_type            = "${var.health_check_type}"
   min_size                     = "${var.min_size}"
