@@ -14,7 +14,7 @@ module "ec2-instance" {
   key_name               = "${var.key_name}"
   subnet_ids             = "${var.subnet_ids}"
   user_data              = "{$var.user_data}"
-
+  associate_public_ip_address  = true
   tags = {
     "tag_name"      = "${var.tag_name}"
     "tag_function"  = "${var.tag_function}"
