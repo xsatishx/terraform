@@ -17,3 +17,14 @@ output "instance_id" {
   description = "EC2 instance ID"
   value       = "${module.ec2-instance.id[0]}"
 }
+
+
+output "instance_id" {
+  description = "EC2 instance ID"
+  value       = "${module.ec2-instance.id[0]}"
+}
+
+output "public_ip" {
+  description = "Public IP of instances"
+  value       = "${module.ec2_instance.public_ip}"
+}
