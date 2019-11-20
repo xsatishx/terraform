@@ -27,7 +27,7 @@ variable "vpc_security_group_ids" {
 // EC2 optional variables
 
 variable "user_data" {
-  default     = ""
+  default     = "sudo apt-get update"
   description = "Enter any user data here"
 }
 
@@ -62,7 +62,7 @@ variable "ebs_count" {
 
 variable "ebs_size" {
   description = "Size of the EBS volumes. This has to be consisten with EBS_count and block_device_names"
-  default     = 100
+  default     = 10
 }
 
 variable "ebs_type" {

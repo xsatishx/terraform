@@ -27,13 +27,3 @@ output "this_db_subnet_group_id" {
   description = "The db subnet group name"
   value       = "${module.db.this_db_subnet_group_id}"
 }
-
-output "this_db_option_group_id" {
-  description = "The db option group name"
-  value       = "${module.db.this_db_option_group_id}"
-}
-
-output "this_db_parameter_group_id" {
-  description = "The db parameter group name"
-  value       = "${module.db.this_db_parameter_group_id}"
-}

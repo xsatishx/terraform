@@ -15,15 +15,15 @@ variable "vpc_security_group_ids" {
 }
 
 variable "sg_name" {
-  default = "scb-http-sg"
+  default = "-http-sg"
 }
 
 variable "alb_name" {
-  default = "SCB-ALB"
+  default = "-ALB"
 }
 
 variable "ag_name" {
-  default = "SCB-ASG"
+  default = "-ASG"
 }
 
 variable "ami" {
@@ -35,13 +35,13 @@ variable "instance_type" {
 }
 
 variable "key_name" {
-  default = "satish-scb"
+  default = "satish-"
 }
 
 // DB variables
 
 variable "identifier" {
-  default     = "scbdb"
+  default     = "db"
   description = "The name of the RDS instance, if omitted, Terraform will assign a random, unique identifier"
 }
 
@@ -74,22 +74,22 @@ variable "tag_function" {
 
 variable "tag_adminname1" {
   description = "Tag the instance with the admins name"
-  default     = "admin1@scb.co.th"
+  default     = "admin1@.co.th"
 }
 
 variable "tag_adminname2" {
   description = "Tag the instance with the admins name"
-  default     = "xyz@scb.co.th"
+  default     = "xyz@.co.th"
 }
 
 variable "tag_dbadminname1" {
   description = "Tag the instance with the admins name"
-  default     = "xyz@scb.co.th"
+  default     = "xyz@.co.th"
 }
 
 variable "tag_dbadminname2" {
   description = "Tag the instance with the admins name"
-  default     = "xyz@scb.co.th"
+  default     = "xyz@.co.th"
 }
 
 variable "tag_createdate" {
