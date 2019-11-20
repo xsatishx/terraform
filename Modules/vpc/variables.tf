@@ -43,7 +43,7 @@ variable "tag_environment" {
   default     = "dev"
 }
 
-variable "tag_adminname1" {
+variable "tag_adminname" {
   description = "Tag the instance with the admins name"
   default     = "admin@admin.com"
 }
