@@ -22,6 +22,10 @@ module "db" {
   final_snapshot_identifier = "${var.final_snapshot_identifier}"
   deletion_protection       = "${var.deletion_protection}"
   subnet_ids                = "${var.subnet_ids}"
+  major_engine_version = "5.7"
+  family = "mysql5.7"
+
+
 
   tags = {
     "tag_environment"  = "${var.tag_environment}"

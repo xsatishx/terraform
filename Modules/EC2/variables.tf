@@ -37,7 +37,7 @@ variable "instance_count" {
 }
 
 variable "key_name" {
-  default     = "satish-aws-hpe.pem"
+  default     = "satish-aws-hpe-seoul"
   description = "Type key to be used for ssh"
 }
 
