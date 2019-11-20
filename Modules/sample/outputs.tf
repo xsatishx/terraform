@@ -1,24 +1,24 @@
-output "vpc_id" {
+output " VPC ID" {
   description = "The ID of the VPC"
   value       = "${module.vpc.vpc_id}"
 }
 
-output "this_db_instance_endpoint" {
+output "Database Endpoint" {
   description = "The connection endpoint"
   value       = "${module.db.this_db_instance_endpoint}"
 }
 
-output "this_db_instance_username" {
+output "Database Username" {
   description = "The master username for the database"
   value       = "${module.db.this_db_instance_username}"
 }
 
-output "this_db_instance_password" {
+output "Database Password" {
   description = "The database password (this password may be old, because Terraform doesn't track it after initial creation)"
   value       = "${module.db.this_db_instance_password}"
 }
 
-output "ids" {
+output "EC2 Instance IDS" {
   description = "List of IDs of instances"
   value       = "${module.ec2_instance.ids}"
 }
