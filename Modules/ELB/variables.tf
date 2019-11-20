@@ -1,42 +1,93 @@
 variable "name" {
   description = " Name to be used on all the resources as identifier"
-  default     = "custom-vpc"
+  default     = "myELB"
 }
 
-variable "cidr" {
-  description = " The CIDR block for the VPC."
-  default     = "10.0.0.0/16"
-}
-
-variable "azs" {
-  description = "A list of availability zones in the region"
+variable "subnets" {
   type        = "list"
+  description = "List of subnets to be associated with the instance"
 
   default = [
-    "ap-northeast-2a",
-    "ap-northeast-2c",
+    "subnet-64d2ec0c",
+    "subnet-f0325fbc",
   ]
 }
 
-variable "private_subnets" {
-  description = "A list of private subnets inside the VPC"
+variable "security_groups" {
+  description = "Subnet ID where the isntance has to be created"
   type        = "list"
 
   default = [
-    "10.0.1.0/24",
-    "10.0.2.0/24",
+    "sg-058aa84cc8c2c2f6f",
+    "sg-f52ab79f",
   ]
 }
 
-variable "public_subnets" {
-  description = "A list of public subnets inside the VPC"
+variable "internal" {
+  description = "Set true if you want to create a internal load balancer"
+  default     = false
+}
+
+variable "target" {
+  description = "Load balancer target port for health check"
+  default     = "HTTP:80/"
+}
+
+variable "instance_port" {
+  description = "The instance port where the application runs"
+  default     = "80"
+}
+
+variable "instance_protocol" {
+  description = "Instance protocol"
+  default     = "HTTP"
+}
+
+variable "lb_port" {
+  description = "The load balance port"
+  default     = "80"
+}
+
+variable "lb_protocol" {
+  description = "Load balancer protocol"
+  default     = "HTTP"
+}
+
+variable "hc_interval" {
+  description = "Health check interval time"
+  default     = 30
+}
+
+variable "hc_healthy" {
+  description = "Health check healthy threshold"
+  default     = 2
+}
+
+variable "hc_unhealthy" {
+  description = "Health check unhealthy threshold"
+  default     = 2
+}
+
+variable "hc_timeout" {
+  description = "Health check time out"
+  default     = 5
+}
+
+variable "number_of_instances" {
+  description = "Number of instances to attach to ELBs"
+}
+
+variable "instances" {
   type        = "list"
-
-  default = [
-    "10.0.101.0/24",
-    "10.0.102.0/24",
-  ]
+  description = "Instances to be associated to the LB"
 }
+
+/*
+variable "ebs_count" {
+  description = "Number of ebs volumes required"
+  default     = 0
+}
+*/
 
 // tags
 variable "tag_environment" {

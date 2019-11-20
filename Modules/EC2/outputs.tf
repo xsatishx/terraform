@@ -3,7 +3,17 @@ output "ids" {
   value       = "${module.ec2-instance.id}"
 }
 
-output "public_ip" {
-  description = "Public ip of the instance"
-  value = "${module.ec2-instance.public_ip}"
+output "vpc_security_group_ids" {
+  description = "List of VPC security group ids assigned to the instances"
+  value       = "${module.ec2-instance.vpc_security_group_ids}"
+}
+
+output "tags" {
+  description = "List of tags"
+  value       = "${module.ec2-instance.tags}"
+}
+
+output "instance_id" {
+  description = "EC2 instance ID"
+  value       = "${module.ec2-instance.id[0]}"
 }

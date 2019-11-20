@@ -1,3 +1,4 @@
+/*
 variable "vpc_id" {
   default = "vpc-21232449"
 }
@@ -99,3 +100,4 @@ variable "tag_createdate" {
 variable "tag_lastmodifydate" {
   default = "20190404"
 }
+*/

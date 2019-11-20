@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "ap-northeast-2"
 }
 
 module "ec2-instance" {
@@ -11,14 +11,25 @@ module "ec2-instance" {
   instance_type          = "${var.instance_type}"
   name                   = "${var.name}"
   vpc_security_group_ids = "${var.vpc_security_group_ids}"
+  iam_instance_profile   = "${var.iam_instance_profile}"
   key_name               = "${var.key_name}"
   subnet_ids             = "${var.subnet_ids}"
   user_data              = "{$var.user_data}"
-  associate_public_ip_address  = true
+
   tags = {
-    "tag_name"      = "${var.tag_name}"
-    "tag_function"  = "${var.tag_function}"
-    "tag_adminname" = "${var.tag_adminname}"
+    "tag_environment"  = "${var.tag_environment}"
+    "tag_company"      = "${var.tag_company}"
+    "tag_applevel"     = "${var.tag_applevel}"
+    "tag_apptype"      = "${var.tag_apptype}"
+    "tag_appname"      = "${var.tag_apptype}"
+    "tag_function"     = "${var.tag_function}"
+    "tag_adminname1"   = "${var.tag_adminname1}"
+    "tag_adminname2"   = "${var.tag_adminname2}"
+    "tag_dbadminname1" = "${var.tag_dbadminname1}"
+    "tag_dbadminname2" = "${var.tag_dbadminname2}"
+    "tag_ec2startstop" = "${var.tag_ec2startstop}"
+    "tag_ec2backup"    = "${var.tag_ec2backup}"
+    "tag_createdby"    = "${var.tag_createdby}"
   }
 
   root_block_device = [
@@ -38,11 +49,8 @@ resource "aws_ebs_volume" "volumes" {
 }
 
 resource "aws_volume_attachment" "volumes-attachment" {
-  count = "${var.ebs_count * var.instance_count}"
-
+  count       = "${var.ebs_count * var.instance_count}"
   device_name = "${var.block_device_names}"
-
-  #device_name = "${var.ebs_device_name['i' + (count.index % var.instance_count])}"
   volume_id   = "${element(aws_ebs_volume.volumes.*.id, count.index)}"
   instance_id = "${element(module.ec2-instance.id, count.index)}"
 }
