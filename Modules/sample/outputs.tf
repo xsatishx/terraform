@@ -18,8 +18,8 @@ output "Database Password" {
   value       = "${module.db.this_db_instance_password}"
 }
 
-output "EC2 Instance IDS" {
-  description = "List of IDs of instances"
-  value       = "${module.ec2_instance.ids}"
+output "EC2 Instance Public_IP" {
+  description = "Public IP of instances"
+  value       = "${module.ec2_instance.public_ip}"
 }
 
