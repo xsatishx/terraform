@@ -17,8 +17,3 @@ output "this_db_instance_password" {
   description = "The database password (this password may be old, because Terraform doesn't track it after initial creation)"
   value       = "${module.db.this_db_instance_password}"
 }
-output "public_ip" {
-  description = "Public IP of instances"
-  value       = "${module.ec2_instance.public_ip}"
-}
-
