@@ -13,8 +13,9 @@ module "ec2-instance" {
   vpc_security_group_ids = "${var.vpc_security_group_ids}"
   key_name               = "${var.key_name}"
   subnet_ids             = "${var.subnet_ids}"
-  user_data              = "{$var.user_data}"
+  user_data              = "${var.user_data}"
   associate_public_ip_address  = true
+  iam_instance_profile = "${var.iam_instance_profile}"
 
   tags = {
     "tag_environment"  = "${var.tag_environment}"
