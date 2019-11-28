@@ -12,7 +12,7 @@ module "vpc" {
   azs  = "${var.azs}"
 
   // use intra_subnet if If you need private subnets that should have no Internet routing else use private_subnets
-  intra_subnets  = "${var.private_subnets}"
+  //intra_subnets  = "${var.private_subnets}"
   public_subnets = "${var.public_subnets}"
 
   enable_nat_gateway = true
