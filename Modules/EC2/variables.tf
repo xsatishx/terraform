@@ -1,7 +1,7 @@
 // EC2 mandatory variables
 
 variable "ami" {
-  default     = "ami-06e7b9c5e0c4dd014"
+  default     = "ami-0e6f067317f3c5474"
   description = "Amazon Machine ID used for provisioning the instance"
 }
 
