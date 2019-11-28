@@ -50,7 +50,7 @@ module "db" {
 module "ec2_instance" {
   source                 = "github.com/xsatishx/terraform/Modules/EC2"
   vpc_security_group_ids = ["${module.vpc.vpc_security_group_ids}"]
-  subnet_ids             = ["${module.vpc.intra_subnets}"]
+  subnet_ids             = ["${module.vpc.public_subnets}"]
   iam_instance_profile =  "${aws_iam_instance_profile.test_profile.name}"
   tag_environment  = "${var.tag_environment}"
   tag_adminname   = "${var.tag_adminname}"
