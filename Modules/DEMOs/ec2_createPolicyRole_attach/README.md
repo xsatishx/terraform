@@ -1,0 +1,1 @@
+Creates a policy, role attaches the policy to role and then the role is attached to an ec2 instance
