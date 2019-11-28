@@ -24,8 +24,8 @@ variable "vpc_security_group_ids" {
   description = "Subnet ID where the isntance has to be created"
   type        = "list"
   default = [
-    "sg-058aa84cc8c2c2f6f",
-    "sg-f52ab79f",
+    "sg-092dd498f29bf0362",
+    "sg-c8eca2a9",
   ]
 }
 
@@ -50,8 +50,9 @@ variable "subnet_ids" {
   type        = "list"
   description = "List of subnets to be associated with the instance"
   default = [
-    "subnet-64d2ec0c",
-    "subnet-f0325fbc",
+    "subnet-3e1da945",
+    "subnet-3fbf9073",
+    "subnet-656f940e",
   ]
 }
 
