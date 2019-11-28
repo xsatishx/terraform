@@ -54,8 +54,4 @@ module "ec2_instance" {
   tag_environment  = "${var.tag_environment}"
   tag_adminname   = "${var.tag_adminname}"
   tag_createdby    = "${var.tag_createdby}"
-
-  vpc_security_group_ids = "${var.vpc_security_group_ids}"
-  subnet_ids             = "${var.subnet_ids}"
-  associate_public_ip_address  = true
 }
