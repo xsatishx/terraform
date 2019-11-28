@@ -50,7 +50,6 @@ variable "subnet_ids" {
   type        = "list"
   description = "List of subnets to be associated with the instance"
   default = [
-    "subnet-3e1da945",
     "subnet-3fbf9073",
     "subnet-656f940e",
   ]
