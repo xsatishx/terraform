@@ -15,6 +15,11 @@ variable "name" {
   description = "Assign this name to the instance"
 }
 
+variable "iam_instance_profile" {
+   default = ""
+   description = "IAM role attachment"
+}
+
 variable "vpc_security_group_ids" {
   description = "Subnet ID where the isntance has to be created"
   type        = "list"
