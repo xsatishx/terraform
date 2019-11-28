@@ -49,7 +49,6 @@ module "db" {
 */
 module "ec2_instance" {
   source                 = "github.com/xsatishx/terraform/Modules/EC2"
-  associate_public_ip_address  = true
   iam_instance_profile =  "${aws_iam_instance_profile.test_profile.name}"
   tag_environment  = "${var.tag_environment}"
   tag_adminname   = "${var.tag_adminname}"
